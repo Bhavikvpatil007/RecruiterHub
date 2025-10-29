@@ -1,0 +1,355 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            height: 100vh;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+        .sidebar a:hover {
+            background: #f0f0f0;
+        }
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .navbar {
+            width: calc(100% - px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #007bff;
+        }
+        .search-bar {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            min-height: 50vh;
+            height: auto;
+        }
+        .job-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+        .job-details {
+            flex: 1;
+            margin-left: 15px;
+        }
+        .job-tags span {
+            background: #f0f0f0;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 5px;
+            font-size: 14px;
+        }
+        .view-candidates {
+            background: #2e62f1;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .view-candidates:hover {
+            background: #1a4dc2;
+        }
+        
+        .job-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+            align-items: center;
+        }
+        
+        .job-actions form {
+        margin: 0;
+        }
+
+        .btn-btn-view {
+            width: 160px;
+            background-color: #2ebf91;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align-last: center;
+        }
+
+        .btn-btn-view:hover {
+            background-color: #8360c3;
+            transform: scale(1.05);
+        }
+        .btn-btn-dlt {
+            width: 160px;
+            background-color: #b60c0c;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align-last: center;
+        
+        }
+        .btn-btn-dlt:hover {
+            background-color: #700505e1;
+            transform: scale(1.05);
+        }
+        .footer {
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 30px;
+            background-color: #2b2b2b;
+        }
+        #mail{
+            color: rgb(35, 184, 211);
+            text-decoration: none;
+        }
+
+        .footer-container {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            text-align: left;
+        }
+        
+
+        .footer-section h2,
+        .footer-section h3 {
+            color: #2ebf91;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #2ebf91;
+        }
+
+        .footer-section p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer-section .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-section .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .footer-section .social-icons a:hover {
+            color: #2ebf91;
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            background: #222;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/api/recruiter/jobs')
+                .then(response => response.json())
+                .then(jobs => {
+                    const jobContainer = document.querySelector("#job-list");
+                    jobContainer.innerHTML = "";
+                    jobs.forEach(job => {
+                        const jobCard = document.createElement("div");
+                        jobCard.classList.add("job-card");
+                        jobCard.innerHTML = `
+                            
+                            <div class="job-details">
+                                <h3>${job.title} at ${job.company}</h3>
+                                <p>${job.location}</p>
+                                <p><strong>${job.jobType}</strong></p>
+                                <p>${job.ctc} LPA</p>
+                                <p>Experience: ${job.experience} years</p>
+                                <div class="job-tags">
+                                    ${job.skills.map(skill => `<span>${skill}</span>`).join(' ')}
+                                </div>
+                            </div>
+                            <button class="view-candidates" onclick="view-candidates('${job.id}')">View Candidates</button>
+                        `;
+                        jobContainer.appendChild(jobCard);
+                    });
+                })
+                .catch(error => console.error('Error fetching jobs:', error));
+        });
+        
+        function applyJob(jobId) {
+            window.location.href = `/job/${jobId}/apply`;
+        }
+    </script>
+</head>
+<body>
+    <div class="main-content">
+        <nav class="navbar">
+        <div class="logo">Talent Bridge</div>
+        <div class="nav-links">
+            <a href="RecDashBoard">Dashboard</a>
+            <a href="ManageJobs">My Jobs</a>
+            <a href="#">Profile</a>
+        </div>
+        </nav>
+        
+        <div class="container">
+            <h2>My Posted Jobs</h2>
+            <div id="job-list"></div>  
+            <div th:if="${not #lists.isEmpty(jobs)}">
+                <div th:each="job : ${jobs}" class="job-card">
+                    <h3 th:text="${job.jobtitle}">Job Title</h3>
+                    <p> <strong>Company :</strong><span th:text="${job.company}"></span></p>
+                    <p> <strong>Skills :</strong> <span th:text="${job.skills}"></span></p>
+                    <p> <strong> Salary :</strong> <span th:text="${job.salary}"></span></p>
+                    <div class="job-actions">
+                        <a th:href="@{/viewApplicants/{jobId}(jobId=${job.objectId})}" class="btn-btn-view">View Candidates</a>
+                        <a th:href="@{/deletejob/{jobId}(jobId=${job.objectId})}"class="btn-btn-dlt">Delete Job</a>
+                        <a th:href="@{/ScheduledMeeting/{jobId}(jobId=${job.objectId})}" class="btn-btn-view">Meetings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Talent Bridge</h2>
+                <p>Connecting top talent with the best opportunities. Whether you're hiring or looking for a job, we've got you covered.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about-us">About Us</a></li>
+                    <li><a href="/jobs">Browse Jobs</a></li>
+                    <li><a href="/employers">For Employers</a></li>
+                    <li><a href="/applicants">For Applicants</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <p>Email: <a id="mail" href="mailto:bhavikvpatil007@gmail.com">bhavikvpatil007@gmail.com</a></p>
+                <p>Phone: +91 9890117228</p>
+                <p>Location: Marunji, Pune</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Talent Bridge | All rights reserved.</p>
+        </div>
+        </footer>
+    </div>
+</body>
+</html>

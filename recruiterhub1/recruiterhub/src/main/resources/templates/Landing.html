@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Hub - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            text-align: center;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #007bff;
+        }
+        .hero {
+            padding: 50px;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            color: white;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .cta-buttons a {
+            text-decoration: none;
+            padding: 15px 25px;
+            margin: 10px;
+            display: inline-block;
+            background: white;
+            color: #007bff;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .cta-buttons a:hover {
+            background: #e6e6e6;
+        }
+        .threads {
+            padding: 40px;
+            text-align: left;
+            max-width: 800px;
+            margin: auto;
+        }
+        .threads h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .thread-item {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .thread-item a {
+            text-decoration: none;
+        }
+        .thread-item h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #007bff;
+        }
+        .thread-item p {
+            margin: 5px 0 0;
+            color: #555;
+        }
+        .footer {
+                color: white;
+                padding: 40px 0;
+                text-align: center;
+                margin-top: 0%;
+                background-color: #2b2b2b;
+            }
+            #mail{
+                color: rgb(35, 184, 211);
+                text-decoration: none;
+            }
+            .footer-container {
+                justify-content: space-between;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: auto;
+                padding: 0 20px;
+                display: flex;
+            }
+            
+            .footer-section {
+                flex: 1;
+                min-width: 250px;
+                padding: 15px;
+                text-align: left;
+            }
+            
+
+            .footer-section h2,
+            .footer-section h3 {
+                color: #2ebf91;
+                margin-bottom: 15px;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-section ul li {
+                margin: 8px 0;
+            }
+
+            .footer-section ul li a {
+                color: white;
+                text-decoration: none;
+                transition: 0.3s;
+            }
+
+            .footer-section ul li a:hover {
+                color: #2ebf91;
+            }
+
+            .footer-section p {
+                margin: 5px 0;
+                font-size: 14px;
+            }
+
+            .footer-section .social-icons {
+                display: flex;
+                gap: 12px;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .footer-section .social-icons a {
+                color: white;
+                font-size: 20px;
+                transition: 0.3s;
+            }
+
+            .footer-section .social-icons a:hover {
+                color: #2ebf91;
+                transform: scale(1.1);
+            }
+
+            .footer-bottom {
+                background: #222;
+                padding: 10px;
+                font-size: 14px;
+                margin-top: 20px;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Talent Bridge</div>
+        <div class="nav-links">
+            <a href="About">About Us</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <h1>Find Your Perfect Job or Hire Top Talent</h1>
+        <p>Connecting job seekers and recruiters effortlessly.</p>
+        <div class="cta-buttons">
+            <a href="Jobseeker">I'm a Job Seeker</a>
+            <a href="Recruiter">I'm a Recruiter</a>
+        </div>
+    </section>
+    
+    <section class="threads">
+        <h2>Latest Discussions</h2>
+        <div class="thread-item"><a href="https://www.coursera.org/articles/ways-to-enhance-your-resume">
+            <h3>How to improve your resume for top recruiters?</h3>
+            <p>Join the discussion on best resume-building strategies and tips.</p>
+        </a>
+        </div>
+        <div class="thread-item"><a href="https://www.coursera.org/articles/high-income-skills">
+            <h3>What are the top skills in demand for 2025?</h3>
+            <p>Explore the latest trends and must-have skills for job seekers.</p>
+        </a>
+        </div>
+        <div class="thread-item"  ><a href="https://resources.workable.com/tutorial/how-to-ace-interview">
+            <h3>How to ace your job interview?</h3>
+            <p>Share your experiences and get insights from industry experts.</p>
+            </a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Talent Bridge</h2>
+                <p>Connecting top talent with the best opportunities. Whether you're hiring or looking for a job, we've got you covered.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about-us">About Us</a></li>
+                    <li><a href="/jobs">Browse Jobs</a></li>
+                    <li><a href="/employers">For Employers</a></li>
+                    <li><a href="/applicants">For Applicants</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <p>Email: <a id="mail" href="mailto:bhavikvpatil007@gmail.com">bhavikvpatil007@gmail.com</a></p>
+                <p>Phone: +91 9890117228</p>
+                <p>Location: Marunji, Pune</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Talent Bridge  | All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

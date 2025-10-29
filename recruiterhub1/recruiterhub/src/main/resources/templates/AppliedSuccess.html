@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Applied Successfully</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #007bff;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 400px;
+            margin: 50px auto;
+        }
+        .container h2 {
+            color: #007bff;
+        }
+        .message {
+            margin: 15px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        .buttons a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Recruiter Hub</div>
+        <div class="nav-links">
+            <a href="/ApplicantDash">Dashboard</a>
+            <a href="/ApplicantDash">Jobs</a>
+            <a href="#">Profile</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h2>Applied Successfully!</h2>
+        <p class="message">You have Successfully applied to this job.</p>
+        <div class="buttons">
+            <a href="/ApplicantDash">Go to Dashboard</a>
+        </div>
+    </div>
+</body>
+</html>

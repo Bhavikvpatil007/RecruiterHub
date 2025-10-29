@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .navbar {
+            width: calc(100% - px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: rgb(0, 123, 255);
+        }
+        .content-wrapper {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 250px;
+            background: rgb(228, 233, 247);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            min-height :100 vh; 
+            height: auto;
+            margin-bottom: 0%;
+            
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+        .sidebar a:hover {
+            background:rgb(0, 123, 255);
+            padding-left: 10px;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 400px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px 0 0 5px;
+        }
+        .search-bar button {
+            padding: 10px 15px;
+            border: none;
+            background: #2e62f1;
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .search-bar button:hover {
+            background: #1a4dc2;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .job-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .job-details {
+            flex: 1;
+        }
+        .apply-button {
+            background: #2ebf91;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .apply-button:hover {
+            background: #218c74;
+        }
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+        .alert-info {
+            color: #31708f;
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+        }
+        .mb-3 {
+            margin-bottom: 1rem;
+        }
+        
+        .sidebar ul li a.active {
+            background: rgb(0, 123, 255);
+            color: white;
+            padding-left: 10px;
+        }
+        .meeting-card {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-left: 4px solid #2ebf91;
+}
+
+.meeting-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.time-slot {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+/* footer */
+        .footer {
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 0%;
+            background-color: #2b2b2b;
+        }
+        #mail{
+            color: rgb(35, 184, 211);
+            text-decoration: none;
+        }
+.footer-container {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            text-align: left;
+        }
+        
+
+        .footer-section h2,
+        .footer-section h3 {
+            color: #2ebf91;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #2ebf91;
+        }
+
+        .footer-section p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer-section .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-section .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .footer-section .social-icons a:hover {
+            color: #2ebf91;
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            background: #222;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Talent Bridge</div>
+        <div class="nav-links">
+            <a href="AllJobs">Dashboard</a>
+            <a href="AllJobs">Jobs</a>
+            <a href="#">Profile</a>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="AllJobs">All Jobs</a>
+                </li>
+                <li>
+                    <a href="/scheduledMeetings" th:classappend="${view == 'meetings'} ? 'active' : ''">Scheduled Meetings</a>
+                </li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <div class="search-bar">
+                <form action="SearchJobs" method="post">
+                <input type="text" name="usertext" placeholder="Search jobs by keyword...(e.g. Role, Location, etc.)">
+                <button type="submit">Search</button>
+                </form>
+            </div>
+            <div class="container">
+                <div th:if="${successMessage}" class="alert alert-info">
+                    <span th:text="${successMessage}"></span>
+                </div>
+                <div th:if="${searchMessage}" class="alert alert-info">
+                    <span th:text="${searchMessage}"></span>
+                </div>
+                <div id="job-list">
+                    <div th:if="${not #lists.isEmpty(jobProfiles)}">
+                        <div th:each="job : ${jobProfiles}" class="job-card">
+                            <div class="job-details">
+                                <h3 th:text="${job.jobtitle}">Job Title</h3>
+                                <p><strong>Company:</strong> <span th:text="${job.company}"></span></p>
+                                <p><strong>Location:</strong> <span th:text="${job.location}"></span></p>
+                                <p><strong>Salary:</strong> <span th:text="${job.salary}"></span></p>
+                                <p><strong>Type:</strong> <span th:text="${job.jobtype}"></span></p>
+                                <p><strong>Skills:</strong><span th:text="${job.skills}"></span></p>
+                                <p th:text="${job.description}"></p>
+                            </div>
+                            <form th:action="@{/apply/{jobId}(jobId=${job.objectId})}" method="post">
+                                <button type="submit" class="apply-button">Apply</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div th:if="${jobProfiles != null and jobProfiles.isEmpty() and isSearch != true}" class="alert alert-info">
+                        No job postings available at the moment.
+                    </div>
+                    <div th:if="${view == 'meetings'}">
+                        <h3>Your Booked Meetings</h3>
+                        <div th:if="${not #lists.isEmpty(bookedMeetings)}">
+                            <div th:each="meeting : ${bookedMeetings}" class="meeting-card">
+                                <div class="meeting-header">
+                                    <h4 th:text="${meeting.job.jobtitle}"></h4>
+                                    <p><strong>Company:</strong> <span th:text="${meeting.job.company}"></span></p>
+                                </div>
+                                <div class="time-slot booked-slot">
+                                    <p><strong>Your Booked Interview:</strong></p>
+                                    <p><strong>Date:</strong>
+                                        <span th:text="${#temporals.format(meeting.slot.startTime, 'MMMM dd, yyyy')}"></span>
+                                    </p>
+                                    <p><strong>Time:</strong>
+                                        <span th:text="${#temporals.format(meeting.slot.startTime, 'h:mm a')}"></span> -
+                                        <span th:text="${#temporals.format(meeting.slot.endTime, 'h:mm a')}"></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Available Time Slots</h3>
+                        <div th:if="${not #lists.isEmpty(unbookedJobs)}">
+                            <div th:each="job : ${unbookedJobs}" class="meeting-card">
+                                <div class="meeting-header">
+                                    <h4 th:text="${job.jobtitle}"></h4>
+                                    <p><strong>Company:</strong> <span th:text="${job.company}"></span></p>
+                                </div>
+
+                                <!-- Show only slots allocated to this applicant -->
+                                <div th:each="slot : ${job.meetingSlots}">
+                                    <div th:if="${slot.candidateId != null and slot.candidateId.toString() == currentApplicantId and !slot.booked}"
+                                         class="time-slot available-slot">
+                                        <form th:action="@{/meetings/book}" method="post">
+                                            <input type="hidden" name="jobId" th:value="${job.objectId}"/>
+                                            <input type="hidden" name="slotTime"
+                                                   th:value="${#temporals.format(slot.startTime, 'yyyy-MM-dd HH:mm')}"/>
+
+                                            <p><strong>Date:</strong>
+                                                <span th:text="${#temporals.format(slot.startTime, 'MMMM dd, yyyy')}"></span>
+                                            </p>
+                                            <p><strong>Time:</strong>
+                                                <span th:text="${#temporals.format(slot.startTime, 'h:mm a')}"></span> -
+                                                <span th:text="${#temporals.format(slot.endTime, 'h:mm a')}"></span>
+                                            </p>
+                                            <button type="submit" class="apply-button">Book This Slot</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div th:if="${#lists.isEmpty(bookedMeetings) and #lists.isEmpty(unbookedJobs)}" class="alert alert-info">
+                            <p>No interview slots available at the moment.</p>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h2>Talent Bridge</h2>
+                    <p>Connecting top talent with the best opportunities. Whether you're hiring or looking for a job, we've got you covered.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/About">About Us</a></li>
+                        <li><a href="AllJobs">Browse Jobs</a></li>
+                        <li><a href="/Recruiter">For Employers</a></li>
+                        <li><a href="AllJobs">For Applicants</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact</h3>
+                    <p>Email: <a id="mail" href="mailto:bhavikvpatil007@gmail.com">bhavikvpatil007@gmail.com</a></p>
+                    <p>Phone: +91 9890117228</p>
+                    <p>Location: Marunji, Pune</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Talent Bridge | All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>

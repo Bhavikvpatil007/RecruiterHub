@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+        }
+        .navbar {
+            width: calc(100%-10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            
+        }
+        .logo a{
+            text-decoration: none;
+            color: black;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #007bff;
+        }
+        .dashboard-container {
+            display: flex;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 240px;
+            background: #2ebf91;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            border-radius: 10px;
+            margin-right: 5px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+        .sidebar a:hover {
+            background: #218c74;
+            padding-left: 10px;
+        }
+        .main-content {
+            
+            flex: 1;
+            background: beige;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #333;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background: #8360c3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #5a3ea5;
+            transform: scale(1.05);
+        }
+        .footer {
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 30px;
+            background-color: #2b2b2b;
+        }
+        #mail{
+            color: rgb(35, 184, 211);
+            text-decoration: none;
+        }
+
+        .footer-container {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            text-align: left;
+        }
+        
+
+        .footer-section h2,
+        .footer-section h3 {
+            color: #2ebf91;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #2ebf91;
+        }
+
+        .footer-section p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer-section .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-section .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .footer-section .social-icons a:hover {
+            color: #2ebf91;
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            background: #222;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="#">Talent Bridge</a> </div>
+        <div class="nav-links">
+            <a href="RecDashBoard">Dashboard</a>
+            <a href="ManageJobs">Jobs</a>
+            <a href="SearchByKeyword">Candidates</a>
+            <a href="#">Profile</a>
+        </div>
+    </nav>
+    
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <a href="RecDashBoard">Dashboard</a>
+            <a href="PostJob">Post a Job</a>
+            <a href="ManageJobs">Manage Jobs</a>
+            <a href="#">Profile</a>
+        </div>
+        <div class="main-content">
+            <div class="section">
+                <h2>Welcome, Recruiter!</h2>
+                <p>Manage your job postings and find the best candidates.</p>
+            </div>
+            <div class="section">
+                <h2>Quick Actions</h2>
+                <div class="btn-container">
+                    <form action="PostJob" method="post"><button type="submit" class="btn">Post a Job</button></form>
+                    <form action="SearchByKeyword" method="post"><button class="btn">Search by Keyword</button></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Talent Bridge</h2>
+                <p>Connecting top talent with the best opportunities. Whether you're hiring or looking for a job, we've got you covered.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/about-us">About Us</a></li>
+                    <li><a href="/jobs">Browse Jobs</a></li>
+                    <li><a href="/employers">For Employers</a></li>
+                    <li><a href="/applicants">For Applicants</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <p>Email: <a id="mail" href="mailto:bhavikvpatil007@gmail.com">bhavikvpatil007@gmail.com</a></p>
+                <p>Phone: +91 9890117228</p>
+                <p>Location: Marunji, Pune</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Talent Bridge | All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

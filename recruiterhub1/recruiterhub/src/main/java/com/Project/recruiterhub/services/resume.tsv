@@ -1,0 +1,673 @@
+Software	B-POSITION
+Engineer	I-POSITION
+at	O
+Microsoft	B-COMPANY
+from	O
+August	B-DATE
+2013	I-DATE
+to	O
+Present	I-DATE
+
+Web	B-POSITION
+Developer	I-POSITION
+at	O
+Cognizant	B-COMPANY
+Technology	I-COMPANY
+Solutions	I-COMPANY
+October	B-DATE
+2005	I-DATE
+-	O
+October	B-DATE
+2008	I-DATE
+
+Site	B-POSITION
+Engineer	I-POSITION
+at	O
+AASF	B-COMPANY
+Winter	I-COMPANY
+Project	I-COMPANY
+December	B-DATE
+2018	I-DATE
+
+Software	B-POSITION
+Developer	I-POSITION
+at	O
+JPMorgan	B-COMPANY
+Chase	I-COMPANY
+June	B-DATE
+2011	I-DATE
+-	O
+June	B-DATE
+2012	I-DATE
+
+Application	B-POSITION
+Lead	I-POSITION
+Engineer	I-POSITION
+at	O
+Toyota	B-COMPANY
+Motor	I-COMPANY
+Sales	I-COMPANY
+October	B-DATE
+2008	I-DATE
+-	O
+March	B-DATE
+2011	I-DATE
+
+Data	B-POSITION
+Scientist	I-POSITION
+at	O
+Capital	B-COMPANY
+One	I-COMPANY
+June	B-DATE
+2015	I-DATE
+-	O
+Now	I-DATE
+
+WEBSITE	B-POSITION
+ADMINISTRATOR	I-POSITION
+at	O
+Environmental	B-COMPANY
+Charity	I-COMPANY
+August	B-DATE
+2009	I-DATE
+–	O
+Jan	B-DATE
+2010	I-DATE
+
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+at	O
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+May	B-DATE
+2010	I-DATE
+–	O
+Present	I-DATE
+
+Marketing	B-POSITION
+Specialist	I-POSITION
+at	O
+Shopify	B-COMPANY
+from	O
+February	B-DATE
+2019	I-DATE
+to	O
+March	B-DATE
+2020	I-DATE
+
+Intern	B-POSITION
+at	O
+ABC	B-COMPANY
+Technologies	I-COMPANY
+January	B-DATE
+2020	I-DATE
+to	O
+June	B-DATE
+2020	I-DATE
+
+Business	B-POSITION
+Analyst	I-POSITION
+at	O
+XYZ	B-COMPANY
+Consulting	I-COMPANY
+February	B-DATE
+2018	I-DATE
+-	O
+December	B-DATE
+2019	I-DATE
+
+Quality	B-POSITION
+Assurance	I-POSITION
+Engineer	I-POSITION
+at	O
+Techwave	B-COMPANY
+Solutions	I-COMPANY
+March	B-DATE
+2016	I-DATE
+to	O
+April	B-DATE
+2017	I-DATE
+
+Python	O
+Java	O
+TensorFlow	O
+Kubernetes	O
+
+Built	O
+an	O
+AI	O
+chatbot	O
+using	O
+Rasa	O
+framework	O
+
+Projects	O
+Machine	O
+Learning	O
+Models	O
+NLP	O
+Tools	O
+
+Worked	O
+on	O
+a	O
+school	O
+project	O
+about	O
+graph	O
+theory	O
+
+Email	O
+:	O
+someone@example.com	O
+
+Bachelor	O
+of	O
+Technology	O
+in	O
+Computer	O
+Science	O
+from	O
+IIT	O
+Delhi	O
+
+Experienced	O
+in	O
+Java	O
+Spring	O
+Boot	O
+
+Received	O
+"Star	O
+Performer"	O
+award	O
+in	O
+Toyota	O
+
+Reading	O
+Hobbies	O
+Swimming	O
+Playing	O
+Chess	O
+
+C#	O
+SQL	O
+Linux   O
+REST	O
+HTML	O
+
+Software	B-POSITION
+Engineer	I-POSITION
+at	O
+Microsoft	B-COMPANY
+June	B-DATE
+2012	I-DATE
+-	O
+August	B-DATE
+2013	I-DATE
+
+Application	B-POSITION
+Engineer	I-POSITION
+at	O
+Toyota	B-COMPANY
+Motor	I-COMPANY
+Sales	I-COMPANY
+October	B-DATE
+2008	I-DATE
+to	O
+March	B-DATE
+2011	I-DATE
+
+Bachelor	O
+of	O
+Engineering	O
+,	O
+2001	O
+-	O
+2005	O
+
+GMAT	O
+Score	O
+:	O
+720	O
+
+Python	O
+Projects	O
+AI	O
+
+October	B-DATE
+2008	I-DATE
+-	O
+March	B-DATE
+2011	I-DATE
+
+May	B-DATE
+2007	I-DATE
+-	O
+May	B-DATE
+2009	I-DATE
+
+GMAT	O
+Score	O
+:	O
+720	O
+
+Wells	B-COMPANY
+Fargo	I-COMPANY
+Bank	I-COMPANY
+
+Bank	B-COMPANY
+of	I-COMPANY
+America	I-COMPANY
+
+Experience	O
+Software	B-POSITION
+Engineer	I-POSITION
+
+Software	B-POSITION
+Developer	I-POSITION
+at	O
+JPMorgan	B-COMPANY
+Chase	I-COMPANY
+
+Software	B-POSITION
+Developer	I-POSITION
+at	O
+JPMorgan	B-COMPANY
+Chase	I-COMPANY
+June	B-DATE
+2012	I-DATE
+-	O
+August	B-DATE
+2013	I-DATE
+
+August	B-DATE
+2013	I-DATE
+to	O
+Present	I-DATE
+
+June	B-DATE
+2014	I-DATE
+–	O
+Now	I-DATE
+
+Cofounder	B-POSITION
+at	O
+BookMark	B-COMPANY
+Lending	I-COMPANY
+Library	I-COMPANY
+May	B-DATE
+2007	I-DATE
+-	O
+May	B-DATE
+2009	I-DATE
+
+Artificial	O
+intelligence	O
+game	O
+solver	O
+for	O
+the	O
+2048	O
+project	O
+
+Game	O
+at	O
+http://www.windowsphone.com/en	O
+
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+at	O
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+May	B-DATE
+2010	I-DATE
+to	O
+Present	I-DATE
+
+VOLUNTARY   O
+
+Software	B-POSITION
+Engineer	I-POSITION
+
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+
+May	B-DATE
+2010	I-DATE
+to	O
+Present	I-DATE
+
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+at	O
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+May	B-DATE
+2010	I-DATE
+to	O
+Present	I-DATE
+
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+Software	B-POSITION
+Engineer	I-POSITION
+from	O
+May	B-DATE
+2010	I-DATE
+to	O
+Present	I-DATE
+
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+May	B-DATE
+2010	I-DATE
+-	O
+Present	I-DATE
+
+Worked	O
+as	O
+a	O
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+for	O
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+since	O
+May	B-DATE
+2010	I-DATE
+
+May	B-DATE
+2010	I-DATE
+–	O
+Present	I-DATE
+Software	B-POSITION
+Engineer	I-POSITION
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+
+Experience	O
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+at	O
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+May	B-DATE
+2010	I-DATE
+to	O
+Present	I-DATE
+
+Joined	O
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+as	O
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+in	O
+May	B-DATE
+2010	I-DATE
+
+Position	O
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+Company	O
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+Duration	O
+May	B-DATE
+2010	I-DATE
+to	O
+Present	I-DATE
+
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+@	O
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+May	B-DATE
+2010	I-DATE
+–	O
+Now	I-DATE
+
+SOFTWARE	B-POSITION
+ENGINEER	I-POSITION
+Berkshire	B-COMPANY
+Software	I-COMPANY
+Design	I-COMPANY
+May	B-DATE
+2010	I-DATE
+to	O
+Jan	B-DATE
+2015	I-DATE
+
+WEBSITE	B-POSITION
+ADMINISTRATOR	I-POSITION
+at	O
+Environmental	B-COMPANY
+Charity	I-COMPANY
+August	B-DATE
+2009	I-DATE
+–	O
+Jan	B-DATE
+2010	I-DATE
+
+VOLUNTARY	O
+EXPERIENCE	O
+Environmental	B-COMPANY
+Charity	I-COMPANY
+-	O
+Berkshire	O
+
+Site	B-POSITION
+Engineer	I-POSITION
+at	O
+AASF	B-COMPANY
+Winter	I-COMPANY
+Project	I-COMPANY
+December	B-DATE
+2018	I-DATE
+
+Software	B-POSITION
+Intern	I-POSITION
+at	O
+XYZ	B-COMPANY
+Solutions	I-COMPANY
+July	B-DATE
+2019	I-DATE
+
+AASF	B-COMPANY
+Winter	I-COMPANY
+Project	I-COMPANY
+
+December	B-DATE
+2018	I-DATE
+
+Site	B-POSITION
+Engineer	I-POSITION
+
+AASF	B-COMPANY
+Winter	I-COMPANY
+Project	I-COMPANY
+December	B-DATE
+2018	I-DATE
+Site	B-POSITION
+Engineer	I-POSITION
+
+Built	O
+a	O
+shopping	O
+Cart	O
+Website	O
+with	O
+Django	O
+.	O
+
+Hygeine	O
+Problems	O
+in	O
+India	O
+,	O
+The	O
+growing	O
+issue	O
+of	O
+Today	O
+.	O
+
+Co-Organized	O
+IIITM	O
+Open	O
+Mic	O
+-	O
+a	O
+Regional	O
+Open	O
+Mic	O
+of	O
+IIITM	O
+,	O
+Gwalior	O
+
+Attended	O
+a	O
+workshop	O
+on	O
+Ethical	O
+Hacking	O
+at	O
+ABV-IIITM	O
+Gwalior	O
+in	O
+2017	B-DATE
+
+Winner	O
+of	O
+Singing	O
+Competition	O
+at	O
+Matra	O
+Bhasha	O
+Diwas-2019	O
+
+Highly	O
+motivated	O
+and	O
+eager	O
+to	O
+learn	O
+new	O
+things	O
+.	O
+
+Token     Tag
+TCS       B-COMPANY
+Ltd.      I-COMPANY
+Software  B-POSITION
+Engineer  I-POSITION
+Jan       B-DATE
+2020      I-DATE
+to        O
+Dec       B-DATE
+2021      I-DATE
+.         O
+
+Google     B-COMPANY
+LLC        I-COMPANY
+Software   B-POSITION
+Engineer   I-POSITION
+March      B-DATE
+2019       I-DATE
+to         O
+April      B-DATE
+2022       I-DATE
+.          O
+
+AASF       B-COMPANY
+Winter     I-COMPANY
+Project    I-COMPANY
+Site       B-POSITION
+Engineer   I-POSITION
+December   B-DATE
+2018       I-DATE
+
+TCS     B-COMPANY
+Software    B-POSITION
+Engineer    I-POSITION
+Jan     B-DATE
+2020    I-DATE
+to      O
+Dec     B-DATE
+2021    I-DATE
+
+Bachelor    O
+of          O
+Engineering O
+SPPU        O
+University  O
+
+Antony  O
+Deepak  O
+Thomas  O
+
+2018    B-DATE
+-   O
+2020    I-DATE
+
+07/2018  B-DATE
+-   O
+03/2020  I-DATE
+
+Mar B-DATE
+2019    I-DATE
+to  O
+Present I-DATE
+
+Berkshire B-COMPANY
+Software I-COMPANY
+Design I-COMPANY
+May B-DATE
+2010 I-DATE
+to O
+Present I-DATE
+SOFTWARE B-POSITION
+ENGINEER I-POSITION
+
+SOFTWARE B-POSITION
+ENGINEER I-POSITION
+Berkshire B-COMPANY
+Software I-COMPANY
+Design I-COMPANY
+May B-DATE
+2010 I-DATE
+to O
+Present I-DATE
+
+Company O
+: O
+Berkshire B-COMPANY
+Software I-COMPANY
+Design I-COMPANY
+Position O
+: O
+Software B-POSITION
+Engineer I-POSITION
+Duration O
+: O
+May B-DATE
+2010 I-DATE
+to O
+Present I-DATE

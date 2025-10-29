@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            color: white;
+            text-align: center;
+        }
+        .navbar {
+            width: calc(100% - px);
+            background: white;
+            padding: 15px 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #007bff;
+        }
+        .container {
+            padding: 50px;
+        }
+        .team-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .team-card {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 250px;
+        }
+        .team-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+                /* footer */
+        .footer {
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 30px;
+            background-color: #2b2b2b;
+        }
+        #mail{
+            color: rgb(35, 184, 211);
+            text-decoration: none;
+        }
+
+        .footer-container {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            text-align: left;
+        }
+        
+
+        .footer-section h2,
+        .footer-section h3 {
+            color: #2ebf91;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #2ebf91;
+        }
+
+        .footer-section p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer-section .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-section .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .footer-section .social-icons a:hover {
+            color: #2ebf91;
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            background: #222;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Talent Bridge</div>
+        <div class="nav-links">
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>About Us</h1>
+        <p>We are a team of final-year Computer Engineering students at Alard College of Engineering, Pune.</p>
+
+        <div class="team-section">
+            <div class="team-card">
+                <img src="Atharva.jpeg" alt="Atharva Salunke">
+                <h3>Atharva Salunke</h3>
+                <p>Final Year Computer Engineering Student</p>
+            </div>
+            <div class="team-card">
+                <img src="../static/Mitali.jpeg" alt="Mitali Bhole">
+                <h3>Mitali Bhole</h3>
+                <p>Final Year Computer Engineering Student</p>
+            </div>
+            <div class="team-card">
+                <img src="Rajkumar.jpeg" alt="Rajkumar Chavan">
+                <h3>Rajkumar Chavan</h3>
+                <p>Final Year Computer Engineering Student</p>
+            </div>
+            <div class="team-card">
+                <img src="../static/Bhavik.jpeg" alt="Bhavik Patil">
+                <h3>Bhavik Patil</h3>
+                <p>Final Year Computer Engineering Student</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Talent Bridge</h2>
+                <p>Connecting top talent with the best opportunities. Whether you're hiring or looking for a job, we've got you covered.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/About">About Us</a></li>
+                    <li><a href="/">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h3>Contact</h3>
+                <p>Email: <a id="mail" href="mailto:bhavikvpatil007@gmail.com">bhavikvpatil007@gmail.com</a></p>
+                <p>Phone: +91 9890117228</p>
+                <p>Location: Marunji, Pune</p>
+            </div>
+            <div class="footer-section social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Talent Bridge | All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

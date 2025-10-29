@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Slot Selection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+            display: flex;
+            flex-direction: column;
+            
+            height: 100vh;
+        }
+        .container{
+           align-self: center;
+           margin-top: 15px;
+        }
+
+        /* Navbar */
+        .navbar {
+            width: calc(100% - px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: rgb(0, 123, 255);
+        }
+        /* Container */
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            text-align: center;
+        }
+
+        /* Slot selection section */
+        .job-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+
+        .job-card {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-width: 300px;
+            text-align: left;
+        }
+
+        .slots {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .slot {
+            padding: 8px 12px;
+            border-radius: 5px;
+            background: #2ebf91;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .slot.selected {
+            background: #218c74;
+        }
+
+        .schedule-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #2e62f1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            display: none;
+        }
+        
+        .schedule-btn.active {
+            display: inline-block;
+        }
+        .footer {
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 30px;
+            background-color: #2b2b2b;
+        }
+        #mail{
+            color: rgb(35, 184, 211);
+            text-decoration: none;
+        }
+.footer-container {
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            text-align: left;
+        }
+        
+
+        .footer-section h2,
+        .footer-section h3 {
+            color: #2ebf91;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #2ebf91;
+        }
+
+        .footer-section p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer-section .social-icons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .footer-section .social-icons a {
+            color: white;
+            font-size: 20px;
+            transition: 0.3s;
+        }
+
+        .footer-section .social-icons a:hover {
+            color: #2ebf91;
+            transform: scale(1.1);
+        }
+
+        .footer-bottom {
+            background: #222;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Talent Bridge</div>
+        <div class="nav-links">
+            <a href="#">Dashboard</a>
+            <a href="#">Jobs</a>
+            <a href="#">Profile</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>🎉 Congratulations! You've Been Selected 🎉</h2>
+        <p>Please select a suitable interview slot.</p>
+
+        <div th:if="${success}" class="success-message" th:text="${success}"></div>
+
+        <div class="job-card">
+            <div th:if="${job != null}">
+                <h3 th:text="${job.jobtitle} ?: 'No job title available'"></h3>
+                <p><strong>Company:</strong> <span th:text="${job.company} ?: 'N/A'"></span></p>
+                <p><strong>Location:</strong> <span th:text="${job.location} ?: 'N/A'"></span></p>
+                <div class="slots">
+            <span th:each="slot : ${availableSlots}"
+                  class="slot"
+                  th:text="${slot}"
+                  th:onclick="'selectSlot(\'' + ${slot} + '\')'"></span>
+                </div>
+            </div>
+            <div th:unless="${job != null}">
+                <p>Job information not available</p>
+            </div>
+        </div>
+
+        <form id="bookForm" th:action="@{/meetings/book/{jobId}(jobId=${job != null ? job.objectId : ''})}" method="post">
+            <input type="hidden" id="selectedSlot" name="slotTime">
+            <button id="schedule-btn" class="schedule-btn" type="submit">Schedule Meeting</button>
+        </form>
+    </div>
+
+    <script>
+        function selectSlot(slotTime) {
+            document.querySelectorAll('.slot').forEach(s => s.classList.remove('selected'));
+            event.target.classList.add('selected');
+            document.getElementById('selectedSlot').value = slotTime;
+            document.getElementById('schedule-btn').classList.add('active');
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/api/applicant/selected-jobs')
+                .then(response => response.json())
+                .then(jobs => {
+                    const jobContainer = document.getElementById("job-container");
+                    jobContainer.innerHTML = "";
+
+                    jobs.forEach(job => {
+                        const jobCard = document.createElement("div");
+                        jobCard.classList.add("job-card");
+                        jobCard.innerHTML = `
+                            <h3>${job.title}</h3>
+                            <p><strong>Company:</strong> ${job.company}</p>
+                            <p><strong>Location:</strong> ${job.location}</p>
+                            <p><strong>Salary:</strong> ${job.salary}</p>
+                            <div class="slots">
+                                ${job.slots.map(slot => `<span class="slot" data-jobid="${job.id}" data-slot="${slot}">${slot}</span>`).join('')}
+                            </div>
+                        `;
+
+                        jobContainer.appendChild(jobCard);
+                    });
+
+                    document.querySelectorAll('.slot').forEach(slot => {
+                        slot.addEventListener("click", function() {
+                            document.querySelectorAll(`.slot[data-jobid="${this.dataset.jobid}"]`).forEach(s => s.classList.remove('selected'));
+                            this.classList.add('selected');
+                            document.getElementById("schedule-btn").classList.add('active');
+                        });
+                    });
+
+                    document.getElementById("schedule-btn").addEventListener("click", function() {
+                        const selectedSlot = document.querySelector(".slot.selected");
+                        if (!selectedSlot) return alert("Please select a slot first.");
+                        
+                        const jobId = selectedSlot.dataset.jobid;
+                        const slotTime = selectedSlot.dataset.slot;
+
+                        fetch(`/api/applicant/schedule-meeting`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({ jobId, slotTime })
+                        }).then(response => {
+                            if (response.ok) alert("Meeting Scheduled Successfully!");
+                        });
+                    });
+                })
+                .catch(error => console.error("Error fetching job slots:", error));
+        });
+    </script>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h2>Talent Bridge</h2>
+                    <p>Connecting top talent with the best opportunities. Whether you're hiring or looking for a job, we've got you covered.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/About">About Us</a></li>
+                        <li><a href="/AllJobs">Browse Jobs</a></li>
+                        <li><a href="/Recruiter">For Employers</a></li>
+                        <li><a href="/AllJobs">For Applicants</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact</h3>
+                    <p>Email: <a id="mail" href="mailto:bhavikvpatil007@gmail.com">bhavikvpatil007@gmail.com</a></p>
+                    <p>Phone: +91 9890117228</p>
+                    <p>Location: Marunji, Pune</p>
+                </div>
+                <div class="footer-section social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Talent Bridge | All rights reserved.</p>
+            </div>
+        </footer>
+</body>
+</html>
