@@ -100,7 +100,6 @@ Follow these steps to run the project on your local system.
 - Recommended Jobs  
 - Apply for Jobs  
 - View Application Status  
-
 ---
 
 ## 🧱 Folder Structure
